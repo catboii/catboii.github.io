@@ -1,74 +1,32 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Emilys+Candy&family=Oswald&family=Source+Sans+Pro&display=swap');
 
-body{ 
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  background: #131313;
-  color: #fff;
-  font-size: 96px;
-  font-family: 'Fira Mono', monospace;
-  letter-spacing: -7px;
+body {
+  background-color: black;
 }
 
-div{
-  animation: glitch 1s linear infinite;
-}
-
-@keyframes glitch{
-  2%,64%{
-    transform: translate(2px,0) skew(0deg);
-  }
-  4%,60%{
-    transform: translate(-2px,0) skew(0deg);
-  }
-  62%{
-    transform: translate(0,0) skew(5deg); 
-  }
-}
-
-div:before,
-div:after{
-  content: attr(title);
+.button {
+  border: none;
+  padding: 0;
+  top: 50%;
+  left: 50%;
   position: absolute;
-  left: 0;
+  transform: translate(-50%,-50%);
+  background: hsl(253, 98%, 77%);
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-div:before{
-  animation: glitchTop 1s linear infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+.top {
+  display: block;
+  padding: 15px 45px;
+  border-radius: 15px;
+  font-size: 2rem;
+  background: hsl(278deg 980% 77%);
+  color: white;
+  transform: translateY(-8px);
 }
 
-@keyframes glitchTop{
-  2%,64%{
-    transform: translate(2px,-2px);
-  }
-  4%,60%{
-    transform: translate(-2px,2px);
-  }
-  62%{
-    transform: translate(13px,-1px) skew(-13deg); 
-  }
-}
-
-div:after{
-  animation: glitchBotom 1.5s linear infinite;
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBotom{
-  2%,64%{
-    transform: translate(-2px,0);
-  }
-  4%,60%{
-    transform: translate(-2px,0);
-  }
-  62%{
-    transform: translate(-22px,5px) skew(21deg); 
-  }
+.button:active .top {
+  transform: translateY(-2px);
 }
